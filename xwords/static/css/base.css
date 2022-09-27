@@ -1,0 +1,125 @@
+::selection {
+    background: #999;
+}
+
+.temp {
+    transition: margin-left .5s;
+}
+
+.temp:hover {
+    margin-left: 10px;
+}
+
+.container {
+    margin: 10px;
+}
+
+#main {
+    margin: 50px;
+}
+
+#rules .card{
+    transition: 300ms;
+}
+
+#rules .card:hover{
+    transform: scale(1.03);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    border-radius: 100vh;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(161,161,161);
+    border-radius: 100vh;
+    transition: 2.5s ease-in;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(145, 145, 145);
+}
+
+.fa {
+  font-size: 20px;
+  line-height: 50px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: white;
+  border-radius: 100%;
+  outline: none;
+  background-color: #212529;
+}
+
+.fa:hover {
+  background-color: #c0f5fc;
+}
+
+.team-member {
+  margin-bottom: 50px;
+  text-align: center;
+  transition: 300ms;
+}
+
+.team-member:hover{
+    transform: scale(1.03);
+}
+
+
+.team-member img {
+  width: 225px;
+  height: 225px;
+  border: 7px solid #fff;
+}
+
+.team-member h4 {
+  margin-top: 25px;
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+.team-member p {
+  margin-top: 0;
+}
+
+label {
+    margin-right: 5px
+}
+
+.label {
+    margin-right: 10px
+}
+
+#main {
+    width: 200vh;
+    margin:0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.alt {
+    border-bottom: outset;
+    border-bottom-width: .5px;
+}
+
+body {
+    width: 200vh;
+    margin:0 auto;
+}
+
+.collapse:not(.show){
+    display: flex!important;
+}

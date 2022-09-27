@@ -1,0 +1,39 @@
+.crossword-board_item {
+    color: transparent;
+    text-shadow: 0 0 0 rgb(0, 0, 0);
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.crossword-board_item--empty {
+    border: 1px solid #000000;
+    background: transparent;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:active,
+    &:focus {
+        background: $color-focus-item;
+        border: 1px solid #000000;
+        outline: 1px solid #000000;
+        }
+}
+.crossword-board_item--blank {
+    background: #000000;
+    border: 1px solid #000000;
+    outline: 1px solid #000000;
+}
+
+.fa-question-circle{
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    display: inline;
+}
+
+p{
+    margin: 0;
+}
