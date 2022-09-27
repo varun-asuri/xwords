@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Crosswords: Home {% endblock %}
+{% block head %}
+    <script src="{% static 'js/index.js' %}"></script>
+    <script type="text/javascript">
+        alert("If the website isn't rendering properly try disabling any adblockers");
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div class="container" style="">
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h2 class="display-6">Welcome to TJHSST Crosswords!</h2>
+                        <p class="lead">You can use this website to generate and play<br>
+                            crosswords in multiple languages.</p>
+                        <p class="lead mt-4">
+                            <a class="temp btn btn-primary btn-lg" href="{% url 'crosswords:play' %}" role="button" accesskey="g" title="Begin designing your puzzle.">Get Started!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center">
+                <video id="vid" width="500vw" autoplay muted>
+                    <source id="vid_src" src="{% static 'img/gif1.mp4' %}" alt="Crosswords video" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Crosswords: Design {% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/design.css' %}">
+    <script src="{% static 'js/design/display.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/design/interactive.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/design/design_page.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div id="error_wrapper" class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-2" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <div id="error_display" class="alert alert-danger alert-dismissible fade show my-2" role="alert" style="display: none">
+            <div id="error_content"></div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="container align-items-center">
+                    <h1>Design Your Crossword!</h1>
+                    <h3>
+                        Crossword Puzzle Attributes
+                        <i id="board-help" class="fa fa-question-circle"></i>
+                    </h3>
+                    <form action="{% url 'crosswords:play' %}" method="post" id="design_form">
+                        {% csrf_token %}
+                        {{ form.board }}
+                        {{ form.optional_words }}
+                        <p>
+                            {{ form.language.label }}
+                            <i id="crossword_language-help" class="fa fa-question-circle"></i>
+                            {{ form.language }}
+                        </p>
+                        <p>
+                            {{ form.clues_language.label }}
+                            <i id="clues_language-help" class="fa fa-question-circle"></i>
+                            {{ form.clues_language }}
+                        </p>
+                        <p>
+                            {{ form.width.label }}
+                            <i id="width-help" class="fa fa-question-circle"></i>
+                            {{ form.width }}
+                        </p>
+                        <p>
+                            {{ form.height.label }}
+                            <i id="height-help" class="fa fa-question-circle"></i>
+                            {{ form.height }}
+                        </p>
+                        <p>
+                            {{ form.total_blocks.label }}
+                            <i id="total_blocks-help" class="fa fa-question-circle"></i>
+                            {{ form.total_blocks }}
+                        </p>
+                        <p>
+                            Optional Words:
+                            <i id="optional_words-help" class="fa fa-question-circle"></i>
+                            <br>
+                            <div id="optional_words-wrapper"></div>
+                            <button type="button" id="addword_button" style="margin-top:10px;">Add Word</button>
+                            <button type="button" id="removeword_button">Remove Word</button>
+                        </p>
+                        <br>
+                        <input id="submit" class="temp btn btn-primary" type="submit" value="Submit" accesskey="s" title="Click to generate your crossword puzzle.">
+                    </form>
+                    <script>console.log(document.getElementById("design_form"))</script>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="container">
+                    <div id="interactive_div">
+                        <div id="interactive_board"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

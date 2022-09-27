@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Crosswords: Home {% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/rules.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+      <div id="rules" class="row justify-content-center">
+        <h1>Rules for American-style crosswords</h1>
+          <div class="card mb-3">
+            <div class="shadow">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="{% static 'img/nodupes.png' %}" class="card-img" alt="No Image Found">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Duplicate Words</h5>
+                    <p class="card-text">Duplicate words are not allowed in American-style crosswords regardless of
+                      orientation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="shadow">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="{% static 'img/minimumlength.png' %}" class="card-img" alt="No Image Found">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Word Length</h5>
+                    <p class="card-text">All words must be at least three letters long and not include any punctuation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="shadow">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="{% static 'img/partoftwo.png' %}" class="card-img" alt="No Image Found">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Word Keying</h5>
+                    <p class="card-text">All letters in the crossword must appear in exactly
+                      one horizontal word and exactly one vertical word.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="shadow">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="{% static 'img/connected.png' %}" class="card-img" alt="No Image Found">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Connected Crossword</h5>
+                    <p class="card-text">All spaces in the crossword must be reachable by
+                    every other space in the puzzle using only horizontal and vertical steps.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="shadow">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="{% static 'img/symmetry.png' %}" class="card-img" alt="No Image Found">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Crossword Symmetry</h5>
+                    <p class="card-text">The blocks for all crosswords follow a 180 degree rotational symmetry, meaning
+                        for every block, there is another block exactly opposite to it.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}TJHSST Crosswords{% endblock %}</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+        <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/selectize/css/selectize.min.css' %}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script type="text/javascript" src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/popper/popper.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/selectize/js/selectize.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/tippy/tippy.min.js' %}"></script>
+        <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <script type="text/javascript" src="{% static 'js/util.js' %}"></script>
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-toggleable-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="{% url 'crosswords:index' %}" accesskey="c" title="Return to the homepage."><span id='u0'>C</span>rosswords</a>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a id="url-design" class="nav-link" href="{% url 'crosswords:design' %}" accesskey="p" title="Click here to enter board specifications."><span id='u1'>D</span>esign</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="url-about" class="nav-link" href="{% url 'crosswords:about' %}" accesskey="a" title="Meet the developers of this project."><span id='u2'>A</span>bout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="url-rules" class="nav-link" href="{% url 'crosswords:rules' %}" accesskey="r" title="View the rules of American Style Crosswords."><span id='u3'>R</span>ules</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="main">
+            {% block main %}{% endblock %}
+        </div>
+    </body>
+    <script type="text/javascript" src="{% static 'js/tippy.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+</html>
